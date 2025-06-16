@@ -59,7 +59,7 @@ const ReviewList = ({ userId, profileDataRefetch }) => {
 
 			{/* Form  */}
 			{
-				isLoggedIn && (
+				isLoggedIn && userId != reviewer_id && (
 					<div className="mt-4">
 						<form onSubmit={handleSubmit} >
 							<div className="flex items-center gap-2 mb-2">
