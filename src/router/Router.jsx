@@ -14,6 +14,7 @@ import NotShowRoute from "../components/RestrictedRoute/NotShowRoute";
 import PrivateRoute from "../components/RestrictedRoute/PrivateRoute";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import EditPost from "../pages/EditPost";
 
 
 export const Router = createBrowserRouter([
@@ -30,6 +31,7 @@ export const Router = createBrowserRouter([
             { path: "/edit-profile/:id", element: <PrivateRoute><EditProfile /></PrivateRoute> }, 
             { path: "/search", element: <Search /> },
             { path: "/add-post", element: <PrivateRoute><AddPost /></PrivateRoute> },
+            { path: "/edit-post/:id", element: <PrivateRoute><EditPost /></PrivateRoute> },
 
             { path: "/login", element: <NotShowRoute><Login /></NotShowRoute> },
             { path: "/register", element: <NotShowRoute><Register /></NotShowRoute> },

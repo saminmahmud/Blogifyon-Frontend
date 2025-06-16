@@ -32,6 +32,16 @@ export const postSlice = createApi({
             invalidatesTags: ['saved_posts', 'post_likes']
         }),
 
+        editPost: builder.mutation({
+            query: ({ id, body }) => ({
+                url: `/post/${id}/`,
+                method: 'PATCH',
+                body,
+                formData: true,
+            }),
+            invalidatesTags: ['posts', 'post'],
+        }),
+
         getTopPosts: builder.query({
             query: () => '/top-post/',
         }),
@@ -122,4 +132,4 @@ export const postSlice = createApi({
     }),
 })
 
-export const { useGetPostsQuery, useGetSearchPostQuery, useGetPostByIdQuery, useGetTopPostsQuery, useGetPostByUserIdQuery, useGetSavedPostsByUserQuery, useCreatePostMutation, useCreatePostLikeMutation, useDeletePostLikeMutation, useCreateSavedPostMutation, useDeleteSavedPostMutation, useSearchCommentReplyQuery, useCreateCommentMutation, useCreateCommentReplyMutation } = postSlice;
+export const { useGetPostsQuery, useGetSearchPostQuery, useGetPostByIdQuery, useEditPostMutation, useGetTopPostsQuery, useGetPostByUserIdQuery, useGetSavedPostsByUserQuery, useCreatePostMutation, useCreatePostLikeMutation, useDeletePostLikeMutation, useCreateSavedPostMutation, useDeleteSavedPostMutation, useSearchCommentReplyQuery, useCreateCommentMutation, useCreateCommentReplyMutation } = postSlice;

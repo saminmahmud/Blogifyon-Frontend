@@ -6,6 +6,7 @@ import { AiFillLike } from "react-icons/ai";
 import { AuthContext } from "../../context/AuthContext";
 import SavePostBtn from "../SavePostBtn/SavePostBtn";
 import LikePostBtn from "../LikePostBtn/LikePostBtn";
+import { CiEdit } from "react-icons/ci";
 
 const ProfilePostCard = ({ post, postRefetch }) => {
 	const [savedData, setSavedData] = useState(null);
@@ -30,7 +31,16 @@ const ProfilePostCard = ({ post, postRefetch }) => {
 	return (
 		<div className="relative">
 			{isLoggedIn && (
-				<SavePostBtn post={post} savedData={savedData} userId={userId} postRefetch={postRefetch} />
+				<div className="flex gap-2">
+					<SavePostBtn post={post} savedData={savedData} userId={userId} postRefetch={postRefetch} />
+					{
+						userId == post?.user?.id && (
+							<Link to={`/edit-post/${post.id}`} className={`absolute top-2 right-12 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-200 transition-colors cursor-pointer text-black `} >
+								<CiEdit />
+							</Link>
+						)
+					}
+				</div>
 			)}
 			<div className="flex flex-col-reverse md:flex-row md:justify-between md:items-center bg-gray-100 rounded-lg gap-5 p-4">
 				<div className="flex flex-col gap-2">

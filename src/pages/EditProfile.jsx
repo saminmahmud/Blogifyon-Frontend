@@ -108,10 +108,6 @@ const EditProfile = () => {
 						>
 							Profile Picture
 						</label>
-                        {/* {inputData.profile_picture && (
-                            <img src={inputData.profile_picture} alt="Preview" className="h-16 mt-2 rounded-full border-2 border-black" />
-                        )} */}
-
 						{inputData.profile_picture && !(inputData.profile_picture instanceof File) && (
 							<img src={inputData.profile_picture} alt="Preview" className="h-16 mt-2 rounded-full border-2 border-black" />
 						)}
