@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+
+@layer utilities {
+  .ckeditor-body img {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 400px !important;
+    display: block;
+    object-fit: contain;
+  }
+
+  @media (min-width: 640px) {
+    .ckeditor-body img {
+      max-width: 75%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ckeditor-body img {
+      max-width: 50%;
+    }
+  }
+}

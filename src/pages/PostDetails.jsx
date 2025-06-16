@@ -9,6 +9,7 @@ import { AuthContext } from '../context/AuthContext';
 import SavePostBtn from "../components/SavePostBtn/SavePostBtn";
 import LikePostBtn from "../components/LikePostBtn/LikePostBtn";
 import CommentReplyList from "../components/Comment-Reply/CommentReplyList";
+import '../index.css';
 
 
 const PostDetails = () => {
@@ -80,7 +81,7 @@ const PostDetails = () => {
 			<h1 className="text-3xl sm:text-4xl font-bold mb-4">
 				{data.title}
 			</h1>
-			<article  dangerouslySetInnerHTML={{ __html: data.body}} className="text-gray-800 text-lg leading-7 space-y-6">
+			<article dangerouslySetInnerHTML={{ __html: data.body}} className="ckeditor-body text-gray-800 text-lg leading-7 space-y-6">
 				
 			</article>
 

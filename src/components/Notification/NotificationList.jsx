@@ -169,7 +169,7 @@ const NotificationList = ({ notificationDropdownOpen, setNotificationDropdownOpe
 
 			
 			{notificationDropdownOpen && (
-				<div className="absolute right-0 mt-2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[35%] xl:w-[25%] h-[40%] overflow-y-scroll bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+				<div className="absolute right-0 mt-2 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[35%] xl:w-[25%] h-[40%] overflow-y-scroll bg-white border border-gray-300 rounded-lg shadow-lg z-50">
 					<h1 className="text-center text-lg underline">
 						Notifications
 					</h1>
@@ -178,20 +178,20 @@ const NotificationList = ({ notificationDropdownOpen, setNotificationDropdownOpe
                         {localNotifications.filter(n => n.id).map((notification) => (
                             <li
                                 key={notification.id}
-                                className="px-4 py-2 text-sm bg-gray-100 cursor-pointer"
+                                className="px-4 py-2 text-sm bg-gray-100"
                             >
-                                <Link
+                                {/* <Link
                                     to={
                                         notification.post
                                             ? `/post/${notification.post}`
                                             : `/profile/${notification.user}`
                                     }
-                                >
+                                > */}
                                     <p>{notification.message}</p>
                                     <small className="flex justify-end">
                                         {new Date(notification.created_at).toLocaleDateString()}
                                     </small>
-                                </Link>
+                                {/* </Link> */}
                             </li>
                         ))}
                     </ul>
