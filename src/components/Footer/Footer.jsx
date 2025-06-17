@@ -56,7 +56,7 @@ const Footer = () => {
 
 				{/* <!-- Copyright --> */}
 				<div className="mt-8 border-t pt-4 text-center text-sm text-gray-400">
-					© 2025 Blogifyon. All rights reserved.
+					© {new Date().getFullYear()} Blogifyon. All rights reserved.
 				</div>
 			</div>
 		</footer>
