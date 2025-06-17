@@ -7,7 +7,7 @@ export const prepareHeaders = (headers) => {
 		return headers.set("Authorization", `Token ${token}`);
 	}
 
-	return null;
+	return headers;
 };
 
 
@@ -16,10 +16,10 @@ export const SOCKET_URL = () => {
 
 	if (token) {
     // For local development (ws://)
-		return `ws://${import.meta.env.VITE_SOCKET_URL}/ws/notifications?token=${token}`;
+		// return `ws://${import.meta.env.VITE_SOCKET_URL}/ws/notifications?token=${token}`;
 		
     // For production (wss://)
-    // return `wss://.../ws/notifications?token=${token}`;
+    return `wss://${import.meta.env.VITE_SOCKET_URL}/ws/notifications?token=${token}`;
 	}
 	// console.error("No token found in localStorage");
 	return null;
