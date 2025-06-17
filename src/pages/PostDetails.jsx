@@ -10,6 +10,7 @@ import SavePostBtn from "../components/SavePostBtn/SavePostBtn";
 import LikePostBtn from "../components/LikePostBtn/LikePostBtn";
 import CommentReplyList from "../components/Comment-Reply/CommentReplyList";
 import '../index.css';
+import { baseUrl } from "../baseUrl/baseUrl";
 
 
 const PostDetails = () => {
@@ -40,6 +41,9 @@ const PostDetails = () => {
 	if (isError) {
 		return <ErrorPage />;
 	}
+
+	const productionBody = data.body.replaceAll('http://127.0.0.1:8000', baseUrl);
+
     
 
 	return (
@@ -81,8 +85,11 @@ const PostDetails = () => {
 			<h1 className="text-3xl sm:text-4xl font-bold mb-4">
 				{data.title}
 			</h1>
-			<article dangerouslySetInnerHTML={{ __html: data.body}} className="ckeditor-body text-gray-800 text-lg leading-7 space-y-6">
+			{/* <article dangerouslySetInnerHTML={{ __html: data.body}} className="ckeditor-body text-gray-800 text-lg leading-7 space-y-6">
 				
+			</article> */}
+
+			<article dangerouslySetInnerHTML={{ __html: data.productionBody}} className="ckeditor-body text-gray-800 text-lg leading-7 space-y-6">	
 			</article>
 
 			{/* <!-- Tags --> */}
