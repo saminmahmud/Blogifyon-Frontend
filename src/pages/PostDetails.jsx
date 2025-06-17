@@ -44,7 +44,6 @@ const PostDetails = () => {
 
 	const productionBody = data.body.replaceAll('http://127.0.0.1:8000', baseUrl);
 
-    
 
 	return (
     <div>
@@ -89,7 +88,7 @@ const PostDetails = () => {
 				
 			</article> */}
 
-			<article dangerouslySetInnerHTML={{ __html: data.productionBody}} className="ckeditor-body text-gray-800 text-lg leading-7 space-y-6">	
+			<article dangerouslySetInnerHTML={{ __html: productionBody}} className="ckeditor-body text-gray-800 text-lg leading-7 space-y-6">	
 			</article>
 
 			{/* <!-- Tags --> */}
